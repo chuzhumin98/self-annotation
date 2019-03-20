@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} 标注任务  {% endblock %}
+
+{% block content %}
+<div class="col"><h5 class="demo-panel-title">查询: {{ qcontent }}</h5></div>
+<div class="col"><h5 class="demo-panel-title">文档: <a href="{{ doc_link }}" target="_blank">{{ doc_name }}</a></h5></div>
+
+<div class="col">
+  <h5 class="demo-panel-title">标注等级</h5>
+  <label class="radio">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio" checked="" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+    -1
+  </label>
+
+  <label class="radio">
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+    0
+  </label>
+
+      <label class="radio">
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+    1
+  </label>
+
+    <label class="radio">
+    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+    2
+  </label>
+
+      <label class="radio">
+    <input type="radio" name="optionsRadios" id="optionsRadios5" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+    3
+  </label>
+
+</div>
+
+
+<div class="col">
+  <a href="#fakelink" class="btn btn-block btn-lg btn-primary">提交</a>
+</div>
+
+{% endblock %}
