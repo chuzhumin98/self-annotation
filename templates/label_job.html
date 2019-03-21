@@ -2,6 +2,8 @@
 {% block title %} 标注任务  {% endblock %}
 
 {% block content %}
+<div class="col"><h5 class="demo-panel-title">总进度: {{ finish_total }} / {{ total }}</h5></div>
+<div class="col"><h5 class="demo-panel-title">当前查询进度: {{ finish_query }} / {{ total_query }}</h5></div>
 <div class="col"><h5 class="demo-panel-title">查询: {{ qcontent }}</h5></div>
 <div class="col"><h5 class="demo-panel-title">文档: <a href="{{ doc_link }}" target="_blank">{{ doc_name }}</a></h5></div>
 
@@ -33,8 +35,10 @@
 
 {% block scripts %}
 <script>
+let id = {{ id }};
+// alert('id = ' + id);
 function selectLabel(num) {
-  document.getElementById("submitLink").href = "/label/behind?label=" + num.toString();
+  document.getElementById("submitLink").href = "/label/behind?label=" + num.toString() + "&id=" + id;
   document.getElementById("button0").className = "btn btn-default btn-wide";
   document.getElementById("button1").className = "btn btn-default btn-wide";
   document.getElementById("button2").className = "btn btn-default btn-wide";
