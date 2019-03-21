@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 
 from django.shortcuts import render
@@ -44,3 +44,6 @@ def job_process(request):
             cnt_labeled += 1
     html += 'the labeled process is {}/{}'.format(cnt_labeled, total_num)
     return HttpResponse(html)
+
+def job_behind(request):
+    return HttpResponseRedirect('/label/job')

@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^disp$', disp),
     url(r'^job$', job),
     url(r'^process$', job_process),
+    url(r'^behind$', job_behind),
 ]

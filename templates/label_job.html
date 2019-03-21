@@ -7,36 +7,46 @@
 
 <div class="col">
   <h5 class="demo-panel-title">标注等级</h5>
-  <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio" checked="" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-    -1
-  </label>
-
-  <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-    0
-  </label>
-
-      <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-    1
-  </label>
-
-    <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-    2
-  </label>
-
-      <label class="radio">
-    <input type="radio" name="optionsRadios" id="optionsRadios5" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-    3
-  </label>
-
+  <button class="btn btn-default btn-wide" id="button4" onclick="selectLabel(-1)">
+  -1
+</button>
+    <button class="btn btn-default btn-wide" id="button0" onclick="selectLabel(0)">
+  0
+</button>
+    <button class="btn btn-default btn-wide" id="button1" onclick="selectLabel(1)">
+  1
+</button>
+    <button class="btn btn-default btn-wide" id="button2" onclick="selectLabel(2)">
+  2
+</button>
+    <button class="btn btn-default btn-wide" id="button3" onclick="selectLabel(3)">
+  3
+</button>
 </div>
-
+<br />
 
 <div class="col">
-  <a href="#fakelink" class="btn btn-block btn-lg btn-primary">提交</a>
+  <a href="/label/behind?label=-2" class="btn btn-block btn-lg btn-primary" id="submitLink">提交</a>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+function selectLabel(num) {
+  document.getElementById("submitLink").href = "/label/behind?label=" + num.toString();
+  document.getElementById("button0").className = "btn btn-default btn-wide";
+  document.getElementById("button1").className = "btn btn-default btn-wide";
+  document.getElementById("button2").className = "btn btn-default btn-wide";
+  document.getElementById("button3").className = "btn btn-default btn-wide";
+  document.getElementById("button4").className = "btn btn-default btn-wide";
+  if (num === -1) {
+    document.getElementById("button4").className = "btn btn-primary btn-wide";
+  } else {
+    document.getElementById("button"+num.toString()).className = "btn btn-primary btn-wide";
+  }
+  // alert("change label to " + num.toString());
+}
+
+</script>
 {% endblock %}
